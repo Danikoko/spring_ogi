@@ -202,20 +202,19 @@
         <li class="item">
           <div class="row">
             <div class="col-md-3">
-              <h3>BMW 3-SERIES</h3>
-              <div class="subtitle">ModernLine</div>
-              <div class="carPrice"> <strong>$99</strong> <span>/Day</span> </div>
+              <h3>TOYOTA PRADO</h3>
+              <div class="subtitle">2010s MODELS</div>
+              <div class="carPrice"> <strong>&#x20A6;10,000</strong> <span>/Day</span> </div>
               <a href="#" class="btn"><i class="fa fa-calendar" aria-hidden="true"></i> Reserve Now</a> </div>
-            <div class="col-md-6"><a href="{{ asset('storage/images/cars/01.jpg') }}" class="image-popup"><img src="{{ asset('storage/images/cars/01.jpg') }}" alt="" /></a></div>
+            <div class="col-md-6"><a href="{{ asset('storage/images/cars/05.jpg') }}" class="image-popup"><img src="{{ asset('storage/images/cars/05.jpg') }}" alt="" /></a></div>
             <div class="col-md-3">
               <div class="carinfo">
                 <ul>
                   <li>Doors: <strong>4</strong></li>
                   <li>Passengers: <strong>5</strong></li>
-                  <li>Luggage: <strong>2 Bags</strong></li>
+                  <li>Luggage Space: <strong>Yes</strong></li>
                   <li>Transmission: <strong>Automatic</strong></li>
-                  <li>Air conditioning: <strong>Dual Zone</strong></li>
-                  <li>Minimum age: <strong>35 years</strong></li>
+                  <li>Air Conditioning: <strong>Functional</strong></li>
                 </ul>
               </div>
             </div>
@@ -224,21 +223,20 @@
         <li class="item">
           <div class="row">
             <div class="col-md-3">
-              <h3>Subaru Impreza</h3>
-              <div class="subtitle">Premium</div>
-              <div class="carPrice"> <strong>$125</strong> <span>/Day</span> </div>
+              <h3>TOYOTA CAMRY</h3>
+              <div class="subtitle">2000s/2010s MODELS</div>
+              <div class="carPrice"> <strong>&#x20A6;7,000</strong> <span>/Day</span> </div>
               <a href="#" class="btn"><i class="fa fa-calendar" aria-hidden="true"></i> Reserve Now</a> </div>
-            <div class="col-md-6"><a href="{{ asset('storage/images/cars/02.jpg') }}" class="image-popup"><img src="{{ asset('storage/images/cars/02.jpg') }}" alt="" /></a></div>
+            <div class="col-md-6"><a href="{{ asset('storage/images/cars/07.jpg') }}" class="image-popup"><img src="{{ asset('storage/images/cars/07.jpg') }}" alt="" /></a></div>
             <div class="col-md-3">
               <div class="carinfo">
                 <ul>
-                  <li>Doors: <strong>4</strong></li>
-                  <li>Passengers: <strong>5</strong></li>
-                  <li>Luggage: <strong>2 Bags</strong></li>
-                  <li>Transmission: <strong>Automatic</strong></li>
-                  <li>Air conditioning: <strong>Dual Zone</strong></li>
-                  <li>Minimum age: <strong>35 years</strong></li>
-                </ul>
+                    <li>Doors: <strong>4</strong></li>
+                    <li>Passengers: <strong>5</strong></li>
+                    <li>Luggage Space: <strong>Yes</strong></li>
+                    <li>Transmission: <strong>Automatic</strong></li>
+                    <li>Air Conditioning: <strong>Functional</strong></li>
+                  </ul>
               </div>
             </div>
           </div>
@@ -246,21 +244,20 @@
         <li class="item">
           <div class="row">
             <div class="col-md-3">
-              <h3>Hyundai Santa Fe XL</h3>
-              <div class="subtitle">Streetsville H</div>
-              <div class="carPrice"> <strong>$199</strong> <span>/Day</span> </div>
+              <h3>COASTER BUS</h3>
+              <div class="subtitle">2000s MODELS</div>
+              <div class="carPrice"> <strong>&#x20A6;18,000</strong> <span>/Day</span> </div>
               <a href="#" class="btn"><i class="fa fa-calendar" aria-hidden="true"></i> Reserve Now</a> </div>
-            <div class="col-md-6"><a href="{{ asset('storage/images/cars/03.jpg') }}" class="image-popup"><img src="{{ asset('storage/images/cars/03.jpg') }}" alt="" /></a></div>
+            <div class="col-md-6"><a href="{{ asset('storage/images/cars/06.jpg') }}" class="image-popup"><img src="{{ asset('storage/images/cars/06.jpg') }}" alt="" /></a></div>
             <div class="col-md-3">
               <div class="carinfo">
                 <ul>
-                  <li>Doors: <strong>4</strong></li>
-                  <li>Passengers: <strong>5</strong></li>
-                  <li>Luggage: <strong>2 Bags</strong></li>
-                  <li>Transmission: <strong>Automatic</strong></li>
-                  <li>Air conditioning: <strong>Dual Zone</strong></li>
-                  <li>Minimum age: <strong>35 years</strong></li>
-                </ul>
+                    <li>Doors: <strong>4</strong></li>
+                    <li>Passengers: <strong>25</strong></li>
+                    <li>Luggage Space: <strong>Yes</strong></li>
+                    <li>Transmission: <strong>Manual</strong></li>
+                    <li>Air Conditioning: <strong>Functional</strong></li>
+                  </ul>
               </div>
             </div>
           </div>
@@ -268,21 +265,20 @@
         <li class="item">
           <div class="row">
             <div class="col-md-3">
-              <h3>Honda Vizel</h3>
-              <div class="subtitle">Streetsville H</div>
-              <div class="carPrice"> <strong>$215</strong> <span>/Day</span> </div>
+              <h3>HIACE BUS</h3>
+              <div class="subtitle">2000s MODELS</div>
+              <div class="carPrice"> <strong>&#x20A6;12,000</strong> <span>/Day</span> </div>
               <a href="#" class="btn"><i class="fa fa-calendar" aria-hidden="true"></i> Reserve Now</a> </div>
-            <div class="col-md-6"><a href="{{ asset('storage/images/cars/04.jpg') }}" class="image-popup"><img src="{{ asset('storage/images/cars/04.jpg') }}" alt="" /></a></div>
+            <div class="col-md-6"><a href="{{ asset('storage/images/cars/08.jpg') }}" class="image-popup"><img src="{{ asset('storage/images/cars/08.jpg') }}" alt="" /></a></div>
             <div class="col-md-3">
               <div class="carinfo">
                 <ul>
-                  <li>Doors: <strong>4</strong></li>
-                  <li>Passengers: <strong>5</strong></li>
-                  <li>Luggage: <strong>2 Bags</strong></li>
-                  <li>Transmission: <strong>Automatic</strong></li>
-                  <li>Air conditioning: <strong>Dual Zone</strong></li>
-                  <li>Minimum age: <strong>35 years</strong></li>
-                </ul>
+                    <li>Doors: <strong>4</strong></li>
+                    <li>Passengers: <strong>14</strong></li>
+                    <li>Luggage Space: <strong>Yes</strong></li>
+                    <li>Transmission: <strong>Automatic</strong></li>
+                    <li>Air Conditioning: <strong>Functional</strong></li>
+                  </ul>
               </div>
             </div>
           </div>
