@@ -27,6 +27,11 @@
 <!-- Main css -->
 <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
+<style>
+    .swal2-popup.swal2-toast .swal2-title {
+        font-size: 1.5em !important;
+    }
+</style>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 <!-- PRE LOADER -->
 <div class="preloader">
@@ -84,26 +89,38 @@
 
 <!-- Form Section -->
 <div id="body" class="container">
+    
   <div id="bookz" class="bformBox">
-    <h3>BOOK YOUR RENTAL TODAY!</h3>
+    <h3>BOOK TODAY!</h3>
     <form>
-      <div class="formrow">
-        <select v-model="formData.vehicle" class="form-control" name="car_type" >
-          <option value="" >Select Your Vehicle For Rental</option>
-          <option>Toyota Prado</option>
-          <option>Toyota Hilux</option>
-          <option>Toyota Camry</option>
-          <option>Toyota Hummer Bus</option>
-          <option>Toyota Coaster</option>
-          <option>Lexus Gx 470</option>
-          <option>Other</option>
-        </select>
+      <div class="formrow row">
+          <div class="col-md-6 col-sm-6">
+            <select v-model="formData.vehicle" class="form-control" name="car_type" >
+                <option value="" >Select Your Vehicle For Rental</option>
+                <option>Toyota Prado</option>
+                <option>Toyota Hilux</option>
+                <option>Toyota Camry</option>
+                <option>Toyota Hummer Bus</option>
+                <option>Toyota Coaster</option>
+                <option>Lexus Gx 470</option>
+                <option>Other</option>
+              </select>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <select v-model="formData.number_of_vehicles" class="form-control" name="car_type" >
+                <option value="" >Select Number Of Vehicles</option>
+                <option>1 - 5</option>
+                <option>6 - 10</option>
+                <option>11 - 15</option>
+                <option>16 & Above</option>
+              </select>
+          </div>
       </div>
       <div class="row">
         <div class="col-md-6 col-sm-6">
           <div class="formrow">
             <div class="input-group"> <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i> Pick-Up</span>
-              <select v-model="formData.pick_up" class="form-control" data-live-search="true" name="pickup" id="pickup" required="required" >
+              <select v-model="formData.pick_up_location" class="form-control" data-live-search="true" name="pickup" id="pickup" required="required" >
                 <option value="">Select Pick-Up</option>
                 <option>Kuje</option>
                 <option>Kwali</option>
@@ -136,7 +153,7 @@
         <div class="col-md-6 col-sm-6">
           <div class="formrow">
             <div class="input-group"> <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i> Drop-Off</span>
-              <select v-model="formData.drop_off" class="form-control" data-live-search="true" name="dropoff" id="drop" required="required">
+              <select v-model="formData.drop_off_location" class="form-control" data-live-search="true" name="dropoff" id="drop" required="required">
                 <option value="" >Select Drop-Off</option>
                 <option>Kuje</option>
                 <option>Kwali</option>
@@ -160,7 +177,7 @@
         <div class="col-md-6 col-sm-6">
           <div class="formrow">
             <div class="input-group date form_datetime" data-date="2018-02-22T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-              <input v-model="formData.drop_off_date" class="form-control" size="16" type="text" value="" readonly placeholder="Select Date and Time" name="datetime_off" required >
+              <input class="form-control" size="16" type="text" value="" readonly placeholder="Select Date and Time" name="datetime_offz" required >
               <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span> </div>
           </div>
         </div>
@@ -183,7 +200,8 @@
         </div>
       </div>
       <div class="formbtn">
-        <button @click="submitBooking()" type="button" class="btn">Submit</button>
+        <button v-if="!isLoading" @click="submitBooking()" type="button" class="btn">Submit</button>
+        <button v-else type="button" class="btn" disabled style="cursor: default;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-spinner fa-spin"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
       </div>
     </form>
   </div>
@@ -463,22 +481,25 @@
 </div>
 
 <!-- Newsletter-->
-<div class="newsletter">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h3>Newsletter</h3>
-        <p>Subscribe for our monthly newsletter.</p>
-      </div>
-      <div class="col-md-8">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Enter Your Email Address">
-          <span class="input-group-btn">
-          <button class="btn btn-secondary" type="button">Sign Up <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-          </span> </div>
-      </div>
+<div id="newsVue">
+    <div class="newsletter">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+            <h3>Newsletter</h3>
+            <p>Subscribe for our monthly newsletter.</p>
+        </div>
+        <div class="col-md-8">
+            <div class="input-group">
+            <input type="text" class="form-control" name="newsletter" placeholder="Enter Your Email Address">
+            <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button" v-if="!isLoading" @click="subscribe()">Subscribe <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+            <button class="btn btn-secondary" type="button" v-else disabled style="cursor: default;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-spinner fa-spin"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </span> </div>
+        </div>
+        </div>
     </div>
-  </div>
+    </div>
 </div>
 
 <!-- Google Map Section -->
@@ -508,13 +529,13 @@
               <input type="tel" class="form-control" name="phone" placeholder="Phone">
             </div>
             <div class="col-md-6 col-sm-12">
-              <input type="text" class="form-control" name="address" placeholder="Address">
+              <input type="text" class="form-control" name="address" placeholder="Subject">
             </div>
             <div class="col-md-12 col-sm-12">
               <textarea class="form-control" rows="5" name="message" placeholder="Message"></textarea>
             </div>
             <div class="col-md-12">
-              <button id="submit" type="submit" class="form-control" name="submit">Send Message</button>
+              <button id="submit" type="button" class="form-control" name="submit">Send Message</button>
             </div>
           </form>
         </div>
@@ -614,21 +635,25 @@
 
 <!-- Custom --> 
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 <script>
     const app = new Vue({
         el: '#body',
         data() {
             return {
+                api_url: 'http://127.0.0.1:8000/api/',
+                isLoading: false,
                 formData: {
                     vehicle: '',
-                    pick_up: '',
-                    drop_off: '',
+                    number_of_vehicles: '',
+                    pick_up_location: '',
+                    drop_off_location: '',
                     name: '',
                     email: '',
                     phone: ''
-                },
-                name: 'Daniel',
+                }
             }
         },
         mounted() {
@@ -643,8 +668,118 @@
             });
         },
         methods: {
-            
+            submitBooking() {
+                let _this = this;
+                if (_this.formData.vehicle !== '' || _this.formData.number_of_vehicles !== '' || _this.formData.pick_up_location !== '' || _this.formData.drop_off_location !== '' || _this.formData.name !== '' || _this.formData.email !== '' || _this.formData.phone !== '' || document.querySelector('[name="datetime_pick"]').value !== '' || document.querySelector('[name="datetime_offz"]').value !== '') {
+                    _this.isLoading = true;
+                    axios.post(`${_this.api_url}booking`, {
+                        vehicle: _this.formData.vehicle,
+                        number_of_vehicles: _this.formData.number_of_vehicles,
+                        pick_up_location: _this.formData.pick_up_location,
+                        drop_off_location: _this.formData.drop_off_location,
+                        pick_up: document.querySelector('[name="datetime_pick"]').value,
+                        drop_off: document.querySelector('[name="datetime_offz"]').value,
+                        name: _this.formData.name,
+                        email: _this.formData.email,
+                        phone: _this.formData.phone
+                    })
+                    .then(function(response) {
+                        // console.log(response)
+                        // console.log('Form Data below')
+                        // console.log(_this.formData)
+                        _this.formData.vehicle = '',
+                        _this.formData.number_of_vehicles = '';
+                        document.querySelector('[name="datetime_pick"]').value = '';
+                        document.querySelector('[name="datetime_offz"]').value = '';
+                        document.querySelector('[name="pickup"]').value = '';
+                        document.querySelector('[name="dropoff"]').value = '';
+                        _this.formData.pick_up_location = '';
+                        _this.formData.drop_off_location = '';
+                        _this.formData.name = '';
+                        _this.formData.email = '';
+                        _this.formData.phone = '';
+                        _this.isLoading = false;
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Mail sent successfully',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    })
+                    .catch(function(error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error sending mail. Check fields and try again',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    })
+                    .then(function() {
+                        _this.isLoading = false;
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ensure all fields are set',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                }    
+            }
         },
+    })
+    const app2 = new Vue({
+        el: '#newsVue',
+        data() {
+            return {
+                api_url: 'http://127.0.0.1:8000/api/',
+                isLoading: false
+            }
+        },
+        methods: {
+            subscribe() {
+                let _this = this;
+                if (document.querySelector('[name="newsletter"]').value !== '') {
+                    _this.isLoading = true;
+                    axios.post(`${_this.api_url}newsletter`, {
+                        email: document.querySelector('[name="newsletter"]').value
+                    })
+                    .then(function(response) {
+                        // console.log(response)
+                        // console.log('Form Data below')
+                        // console.log(_this.formData)
+                        document.querySelector('[name="newsletter"]').value = '',
+                        _this.isLoading = false;
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Subscription successful',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    })
+                    .catch(function(error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error subscribing. Ensure you enter a valid email address',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    })
+                    .then(function() {
+                        _this.isLoading = false;
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Please enter an email address',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                }
+            }
+        }
     })
 </script>
 <script>
@@ -655,6 +790,4 @@
     }
 </script>
 </body>
-
-<!-- Mirrored from www.sharjeelanjum.com/html/car-rental/html/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Feb 2021 00:02:56 GMT -->
 </html>

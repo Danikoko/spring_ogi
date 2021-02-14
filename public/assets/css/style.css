@@ -2573,11 +2573,24 @@ padding:.5rem 1.5rem;
 	border-color: #0462d7;
 }
 
-
+@media (min-width: 988px) and (max-width: 1024px) {
+	.is-sticky .custom-navbar .navbar-brand {
+		margin-top: 24px !important;
+	}
+	.custom-navbar .navbar-brand {
+		margin-top: 13px !important;
+	}
+}
 /*---------------------------------------
    Mobile Responsive styles              
 -----------------------------------------*/
 @media (max-width: 1024px) {
+.bformBox .formrow .form-control {
+	font-size: 100%;
+}
+.is-sticky .custom-navbar .navbar-brand {
+	padding-top: 4%;
+}
 .custom-navbar .nav li a {
 	padding: 10px 15px;
 }
