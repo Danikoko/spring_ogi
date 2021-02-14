@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>Spring Ogi Car Hire</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="description" content="Car Rental One Page HTML Template">
+<meta name="description" content="Hire and Purchase Cars/Buses Today">
 <meta name="keywords" content="car hire, hire, abuja, spring, spring ogi, spring ogi car hire, fct, affordable, quality, services nigeria, hire car, cars for hire, car, car rental, booking, business">
 <meta name="author" content="Daniel Enamudu">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -649,7 +649,7 @@
         el: '#body',
         data() {
             return {
-                api_url: 'http://127.0.0.1:8000/api/',
+                api_url: 'http://127.0.0.1/spring_ogi/public/api/',
                 isLoading: false,
                 formData: {
                     vehicle: '',
@@ -739,7 +739,7 @@
         el: '#newsVue',
         data() {
             return {
-                api_url: 'http://127.0.0.1:8000/api/',
+                api_url: 'http://127.0.0.1/spring_ogi/public/api/',
                 isLoading: false
             }
         },
@@ -791,7 +791,7 @@
         el: '#contactVue',
         data() {
             return {
-                api_url: 'http://127.0.0.1:8000/api/',
+                api_url: 'http://127.0.0.1/spring_ogi/public/api/',
                 isLoading: false,
                 formData: {
                     name: '',
