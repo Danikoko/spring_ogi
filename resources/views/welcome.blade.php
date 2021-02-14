@@ -81,7 +81,7 @@
     <div class="row">
       <div class="col-md-offset-1 col-md-10 col-sm-12">
         <div class="slide-text">
-          <h3>What we offer? <a href="#" class="typewrite" data-period="2000" data-type='[ "Car hire within Abuja.", "Car hire from Abuja to other states.", "Rentals for weddings and other ceremonies.", "Escort services.", "Project vehicles." ]'> <span class="wrap"></span> </a> </h3>
+          <h3>What we offer? <a href="#" class="typewrite" data-period="2000" data-type='[ "Car hire within Abuja.", "Inter-state car hire.", "Wedding rentals.", "Rentals for events.", "Escort services.", "Project vehicles." ]'> <span class="wrap"></span> </a> </h3>
           <h1>Hire a vehicle today!</h1>
           <p>Have the oga treatment</p>
           <a href="#bookz" class="btn btn-default section-btn" onclick="goToBook()">Get Started</a> </div>
@@ -98,16 +98,18 @@
     <form>
       <div class="formrow row">
           <div class="col-md-6 col-sm-6">
-            <select v-model="formData.vehicle" class="form-control" name="car_type" >
-                <option value="" >Select Your Vehicle For Rental</option>
-                <option>Toyota Prado</option>
-                <option>Toyota Hilux</option>
-                <option>Toyota Camry</option>
-                <option>Toyota Hummer Bus</option>
-                <option>Toyota Coaster</option>
-                <option>Lexus Gx 470</option>
-                <option>Other</option>
-              </select>
+              <div class="formrow">
+                <select v-model="formData.vehicle" class="form-control" name="car_type" >
+                    <option value="" >Select Your Vehicle For Rental</option>
+                    <option>Toyota Prado</option>
+                    <option>Toyota Hilux</option>
+                    <option>Toyota Camry</option>
+                    <option>Toyota Hummer Bus</option>
+                    <option>Toyota Coaster</option>
+                    <option>Lexus Gx 470</option>
+                    <option>Other</option>
+                  </select>
+              </div>
           </div>
           <div class="col-md-6 col-sm-6">
             <select v-model="formData.number_of_vehicles" class="form-control" name="car_type" >
@@ -203,7 +205,7 @@
         </div>
       </div>
       <div class="formbtn">
-        <button v-if="!isLoading" @click="submitBooking()" type="button" class="btn">Submit</button>
+        <button v-if="!isLoading" @click="submitBooking()" type="button" class="btn">Book Now</button>
         <button v-else type="button" class="btn" disabled style="cursor: default;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-spinner fa-spin"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
       </div>
     </form>
