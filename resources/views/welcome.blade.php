@@ -31,6 +31,9 @@
     .swal2-popup.swal2-toast .swal2-title {
         font-size: 1.5em !important;
     }
+    .swal2-title {
+        line-height: 30px;
+    }
 </style>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 <!-- PRE LOADER -->
@@ -487,11 +490,11 @@
         <div class="row">
         <div class="col-md-4">
             <h3>Newsletter</h3>
-            <p>Subscribe for our monthly newsletter.</p>
+            <p style="padding-bottom: 3%;">Subscribe for our monthly newsletter.</p>
         </div>
         <div class="col-md-8">
             <div class="input-group">
-            <input type="text" class="form-control" name="newsletter" placeholder="Enter Your Email Address">
+            <input type="text" class="form-control" name="newsletter" :placeholder="window.innerWidth <= 450 ? 'Email Address' : 'Enter Your Email Address'">
             <span class="input-group-btn">
             <button class="btn btn-secondary" type="button" v-if="!isLoading" @click="subscribe()">Subscribe <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
             <button class="btn btn-secondary" type="button" v-else disabled style="cursor: default;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-spinner fa-spin"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
@@ -515,27 +518,28 @@
     </div>
     
     <!-- CONTACT FORM HERE -->
-    <div class="row">
+    <div id="contactVue" class="row">
       <div class="col-md-8">
         <div class="contact-form">
           <form>
             <div class="col-md-6 col-sm-6">
-              <input type="text" class="form-control" name="name" placeholder="Name" required  >
+              <input v-model="formData.name" type="text" class="form-control" name="name" placeholder="Name" required  >
             </div>
             <div class="col-md-6 col-sm-6">
-              <input type="email" class="form-control" name="email" placeholder="Email" required >
+              <input v-model="formData.email" type="email" class="form-control" name="email" placeholder="Email" required >
             </div>
             <div class="col-md-6 col-sm-12">
-              <input type="tel" class="form-control" name="phone" placeholder="Phone">
+              <input v-model="formData.phone" type="tel" class="form-control" name="phone" placeholder="Phone">
             </div>
             <div class="col-md-6 col-sm-12">
-              <input type="text" class="form-control" name="address" placeholder="Subject">
+              <input v-model="formData.subject" type="text" class="form-control" name="address" placeholder="Subject">
             </div>
             <div class="col-md-12 col-sm-12">
-              <textarea class="form-control" rows="5" name="message" placeholder="Message"></textarea>
+              <textarea v-model="formData.message" class="form-control" rows="5" name="message" placeholder="Message"></textarea>
             </div>
             <div class="col-md-12">
-              <button id="submit" type="button" class="form-control" name="submit">Send Message</button>
+              <button v-if="!isLoading" @click="contactNow()" id="submit" type="button" class="form-control" name="submit">Send Message</button>
+              <button v-else id="submit" style="cursor: default" disabled type="button" class="form-control" name="submit"><i class="fa fa-spinner fa-spin"></i></button>
             </div>
           </form>
         </div>
@@ -749,7 +753,7 @@
                         // console.log(response)
                         // console.log('Form Data below')
                         // console.log(_this.formData)
-                        document.querySelector('[name="newsletter"]').value = '',
+                        document.querySelector('[name="newsletter"]').value = '';
                         _this.isLoading = false;
 
                         Swal.fire({
@@ -776,6 +780,74 @@
                         title: 'Please enter an email address',
                         showConfirmButton: false,
                         timer: 3000
+                    })
+                }
+            }
+        }
+    })
+    const app3 = new Vue({
+        el: '#contactVue',
+        data() {
+            return {
+                api_url: 'http://127.0.0.1:8000/api/',
+                isLoading: false,
+                formData: {
+                    name: '',
+                    email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                }
+            }
+        },
+        methods: {
+            contactNow() {
+                let _this = this;
+                if (_this.formData.name !== '' || _this.formData.email !== '' || _this.formData.phone !== '' || _this.formData.subject !== '' || _this.formData.message !== '') {
+                    _this.isLoading = true;
+                    axios.post(`${_this.api_url}contact`, {
+                        name: _this.formData.name,
+                        email: _this.formData.email,
+                        phone: _this.formData.phone,
+                        subject: _this.formData.subject,
+                        message: _this.formData.message
+                    })
+                    .then(function(response) {
+                        // console.log(response)
+                        // console.log('Form Data below')
+                        // console.log(_this.formData)
+                        _this.formData.name = '';
+                        _this.formData.email = '';
+                        _this.formData.phone = '';
+                        _this.formData.subject = '';
+                        _this.formData.message = '';
+
+                        _this.isLoading = false;
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Mail sent successfully',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    })
+                    .catch(function(error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error sending mail. Ensure all fields are valid',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                    })
+                    .then(function() {
+                        _this.isLoading = false;
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Please ensure all fields are filled',
+                        showConfirmButton: false,
+                        timer: 10000
                     })
                 }
             }
