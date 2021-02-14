@@ -170,7 +170,7 @@ a:hover, a:active, a:focus {
 	font-weight: 400;
 }
 .section-title p {
-	max-width: 800px;
+	max-width: 830px;
 	margin: auto;
 }
 .parallax-section {
@@ -862,7 +862,7 @@ a:hover, a:active, a:focus {
 }
 .vehiclesList ul li .subtitle {
 	color: #888;
-	text-transform: uppercase;
+	text-transform: initial;
 	font-size: 14px;
 	margin-bottom: 20px;
 	position: relative;
@@ -1704,7 +1704,7 @@ ul.orderlist li:before {
 	font-size: 18px;
 }
 .testimonialsList li .clientinfo {
-	font-weight: 400;
+	font-weight: 700;
 	color: #0462d7;
 }
 #testimonials .section-title p {

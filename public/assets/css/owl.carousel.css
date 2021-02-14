@@ -220,7 +220,7 @@
 .owl-nav{margin-top:30px;}
 .owl-nav div{display:inline-block; border:1px solid #eee; width:40px; height:40px; border-radius:50%; margin:0 10px; line-height:40px;}
 .owl-nav div i{font-size:18px; color:#999;}
-.owl-nav div:hover, .owl-nav div:hover i{border-color:#f9c200; color:#f9c200;}
+.owl-nav div:hover, .owl-nav div:hover i{border-color:#0462d7; color:#0462d7;}
 
 
 .owl-dots{text-align:center; margin-top:20px; display:none !important;}

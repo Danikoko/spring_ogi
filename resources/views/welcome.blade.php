@@ -56,7 +56,6 @@
         <li><a href="#cars" class="smoothScroll">Cars</a></li>
         <li><a href="#about" class="smoothScroll">About</a></li>
         <li><a href="#service" class="smoothScroll">Service</a></li>
-        <li><a href="#team" class="smoothScroll">Support</a></li>
         <li><a href="#testimonials" class="smoothScroll">Clients</a></li>
         <li><a href="#contact" class="smoothScroll">Contact</a></li>
         <li><a class="phone_number" href="tel:08036985919"><span style="line-height: initial; margin-top: 0;" class="calltxt"><i class="fa fa-phone" aria-hidden="true"></i> 0803-698-5919</span></a></li>
@@ -184,7 +183,7 @@
         </div>
       </div>
       <div class="formbtn">
-        <button @click="submitBooking()" type="button" class="btn">Submit Car Booking</button>
+        <button @click="submitBooking()" type="button" class="btn">Submit</button>
       </div>
     </form>
   </div>
@@ -306,35 +305,22 @@
 <div id="about">
   <div class="container">
     <div class="section-title">
-      <h3>About <span>Car Rental</span> Template</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet, massa ac ornare feugiat, nunc dui auctor ipsum, sed posuere eros sapien id quam. Maecenas odio nisi, efficitur eget</p>
+      <h3>About <span>Spring Ogi</span> Car Hire</h3>
+      <p>We hire and sell Vehicles (Hiluxes, Saloon Cars and SUVs) for individuals organizations within Abuja & environs.</p>
     </div>
     <div class="about-desc">
       <div class="row">
         <div class="col-md-7">
-          <ul class="circleList row">
-            <li class="col-md-4 col-sm-4">
-              <div class="cricle"><i class="fa fa-car" aria-hidden="true"></i></div>
-              <div class="title">Mauris convallis felis</div>
-            </li>
-            <li class="col-md-4 col-sm-4">
-              <div class="cricle"><i class="fa fa-users" aria-hidden="true"></i></div>
-              <div class="title">Mauris convallis felis</div>
-            </li>
-            <li class="col-md-4 col-sm-4">
-              <div class="cricle"><i class="fa fa-tags" aria-hidden="true"></i></div>
-              <div class="title">Mauris convallis felis</div>
-            </li>
-          </ul>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. <br>
+          <p>We at Spring Ogi Car Hire, strive to get the best service possible to our customers. Hence our vast choices of available vehicles. <br>
             <br>
-            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            We have developed an easy-to-use booking system to get you the right vehicle, at the right time and at the right price. Below are some vehicles avaiable for rent/purchase.</p>
           <ul class="orderlist">
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li>Sed a mauris at ex lobortis hendrerit in nec felis.</li>
-            <li>Nunc sed urna sit amet sapien rhoncus pretium congue id sem.</li>
-            <li>Vivamus sagittis sapien a tellus consequat rutrum.</li>
-            <li>Mauris at justo malesuada ligula accumsan tincidunt quis efficitur orci.</li>
+            <li>Toyota Prado</li>
+            <li>Toyota Hilux</li>
+            <li>Toyota Camry</li>
+            <li>Toyota Hummer Bus</li>
+            <li>Toyota Coaster</li>
+            <li>Lexus Gx 470</li>
           </ul>
         </div>
         <div class="col-md-5">
@@ -379,7 +365,7 @@
     <!-- Section Title -->
     <div class="section-title" >
       <h3>Car Rental <span>Services</span></h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet, massa ac ornare feugiat, nunc dui auctor ipsum, sed posuere eros sapien id quam. Maecenas odio nisi, efficitur eget</p>
+      <p>There are several opportunities and benefits attached to doing business with us which some of our happy customers can concur to. We'd be happy to have you among them as well.</p>
     </div>
     <div class="row"> 
       <!-- Service 1 -->
@@ -387,7 +373,7 @@
         <div class="service-thumb">
           <div class="thumb-icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
           <h4>Phone Reservation</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque.</p>
+          <p>Don't want to book here, give us a call on 0803-698-5919.</p>
         </div>
       </div>
       
@@ -396,16 +382,16 @@
         <div class="service-thumb">
           <div class="thumb-icon"><i class="fa fa-money" aria-hidden="true"></i></div>
           <h4>Special Rates</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque.</p>
+          <p>Contact us on our special rates offers. These depend on some factors.</p>
         </div>
       </div>
       
       <!-- Service 3 -->
       <div class="col-md-4 col-sm-6">
         <div class="service-thumb">
-          <div class="thumb-icon"><i class="fa fa-road" aria-hidden="true"></i></div>
-          <h4>One Way Rental</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque.</p>
+          <div class="thumb-icon"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+          <h4>No Hidden Charges</h4>
+          <p>What you see is what you get. No extra/recurring billings</p>
         </div>
       </div>
       
@@ -413,8 +399,8 @@
       <div class="col-md-4 col-sm-6">
         <div class="service-thumb">
           <div class="thumb-icon"><i class="fa fa-umbrella" aria-hidden="true"></i></div>
-          <h4>Life Insurance</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque.</p>
+          <h4>Car Insurance</h4>
+          <p>You have the choice of insuring your car purchase with our insurance partners.</p>
         </div>
       </div>
       
@@ -423,7 +409,7 @@
         <div class="service-thumb">
           <div class="thumb-icon"><i class="fa fa-building" aria-hidden="true"></i></div>
           <h4>City to City</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque.</p>
+          <p>Inter-city usage is allowed. This works particularly well with bus rentals.</p>
         </div>
       </div>
       
@@ -431,8 +417,8 @@
       <div class="col-md-4 col-sm-6">
         <div class="service-thumb">
           <div class="thumb-icon"><i class="fa fa-car" aria-hidden="true"></i></div>
-          <h4>Free Rides</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque.</p>
+          <h4>Car Sales</h4>
+          <p>There's a variety of vehicles up for sale here. Get in touch with us for more info.</p>
         </div>
       </div>
     </div>
@@ -443,8 +429,8 @@
 <div class="taglinewrap">
   <div class="container">
     <h2>Get Started Today</h2>
-    <p>Sed sed neque laoreet, rhoncus libero id, pharetra est. Sed ut neque est. Maecenas et est sagittis, mollis risus dignissim, mattis dolor. </p>
-    <a href="#">Purchase Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
+    <p>We are excited and ready to take your booking. <a href="08036985919" style="display: inline-block; background: none; padding: 0; color: #fff; font-size: initial; font-weight: 600; text-transform: none; margin-top: initial;">Call</a> or <a style="display: inline-block; background: none; padding: 0; color: #fff; font-size: initial; font-weight: 600; text-transform: none; margin-top: initial;" href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@springogi.com" target="_blank">mail</a> us for more inquiries.</p>
+    <a href="#!" onclick="goToBook()">Get Quote <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </div>
 </div>
 
 <!-- Testimonials Section -->
@@ -459,34 +445,19 @@
       <!-- Client -->
       <li class="item">
         <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </div>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra id nunc at finibus. Etiam sollicitudin faucibus cursus. Proin luctus cursus nulla sed iaculis. Quisque vestibulum augue nec aliquet aliquet."</p>
-        <div class="clientname">Jhon Doe</div>
+        <p>"Excellent and quick response. The vehicles are in good working condition."</p>
+        <div class="clientname">Danladi Abu</div>
         <div class="clientinfo">CEO - Company Inc</div>
       </li>
       
       <!-- Client -->
       <li class="item">
         <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </div>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra id nunc at finibus. Etiam sollicitudin faucibus cursus. Proin luctus cursus nulla sed iaculis. Quisque vestibulum augue nec aliquet aliquet."</p>
-        <div class="clientname">Jhon Doe</div>
-        <div class="clientinfo">CEO - Company Inc</div>
+        <p>"I Purchased some vehicles for my company. My employees love them. Looking forward to subsequent deals"</p>
+        <div class="clientname">Emeka Nnamdi</div>
+        <div class="clientinfo">CEO - EMK BDC</div>
       </li>
       
-      <!-- Client -->
-      <li class="item">
-        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </div>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra id nunc at finibus. Etiam sollicitudin faucibus cursus. Proin luctus cursus nulla sed iaculis. Quisque vestibulum augue nec aliquet aliquet."</p>
-        <div class="clientname">Jhon Doe</div>
-        <div class="clientinfo">CEO - Company Inc</div>
-      </li>
-      
-      <!-- Client -->
-      <li class="item">
-        <div class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> </div>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra id nunc at finibus. Etiam sollicitudin faucibus cursus. Proin luctus cursus nulla sed iaculis. Quisque vestibulum augue nec aliquet aliquet."</p>
-        <div class="clientname">Jhon Doe</div>
-        <div class="clientinfo">CEO - Company Inc</div>
-      </li>
     </ul>
   </div>
 </div>
@@ -511,7 +482,7 @@
 </div>
 
 <!-- Google Map Section -->
-<div id="map"></div>
+{{-- <div id="map"></div> --}}
 
 <!-- Contact Section -->
 <div id="contact">
@@ -520,14 +491,13 @@
     <!-- Dection Title -->
     <div class="section-title" >
       <h3>Contact <span>Us</span></h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet, massa ac ornare feugiat, nunc dui auctor ipsum, sed posuere eros sapien id quam. Maecenas odio nisi, efficitur eget.</p>
     </div>
     
     <!-- CONTACT FORM HERE -->
     <div class="row">
       <div class="col-md-8">
         <div class="contact-form">
-          <form id="contact-form" class="row" action="https://www.sharjeelanjum.com/html/car-rental/html/feedback.php" method="POST">
+          <form>
             <div class="col-md-6 col-sm-6">
               <input type="text" class="form-control" name="name" placeholder="Name" required  >
             </div>
@@ -553,21 +523,19 @@
         <div class="contact-now">
           <div class="contact"> <span><i class="fa fa-home"></i></span>
             <div class="information"> <strong>Address:</strong>
-              <p>8500 lorem, New Ispum, Dolor amet sit 12301</p>
+              <p>Don't know what address to use here</p>
             </div>
           </div>
           <!-- Contact Info -->
           <div class="contact"> <span><i class="fa fa-envelope"></i></span>
             <div class="information"> <strong>Email Address:</strong>
-              <p>investigate@your-site.com</p>
-              <p>investigate@your-site.com</p>
+              <p>contact@springogi.com</p>
             </div>
           </div>
           <!-- Contact Info -->
           <div class="contact"> <span><i class="fa fa-phone"></i></span>
             <div class="information"> <strong>Phone No:</strong>
-              <p>+12 345 67 09</p>
-              <p>+12 345 67 09</p>
+              <p>0803-698-5919</p>
             </div>
           </div>
           <!-- Contact Info --> 
@@ -607,11 +575,11 @@
 <footer>
   <div class="container"> 
     <!-- social Section -->
-    <div class="socialLinks" > <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> </div>
+    <div class="socialLinks" > <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </div>
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <div class="footer-copyright">
-          <p>&copy; 2018 Car Rentals | All Rights Reserved.</p>
+          <p>&copy; <script>document.write(new Date().getFullYear())</script> Spring Ogi Car Hire | All Rights Reserved.</p>
         </div>
       </div>
     </div>
